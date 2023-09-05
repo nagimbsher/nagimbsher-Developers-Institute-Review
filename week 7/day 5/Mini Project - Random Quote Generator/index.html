@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generage_quote()">Generate a quote</button>
+    <section id="quote_section"></section>
+    <form>
+        <input type="text" placeholder="Quote" class="input_text" name="quote" oninput="record_quote(event)">
+        <input type="text" placeholder="Author" class="input_text" name="author" oninput="record_author(event)">
+        <button type="button" onclick="submit_quote()">Add quote</button>
+        <button type="button" onclick="get_stats()">get some stats about your quote</button>
+    </form>
+
+    <select id="select_author" onchange="clear_div()">
+        <option class="options" value="Benjamin Franklin">Benjamin Franklin</option>
+        <option class="options" value="Forest Gump">Forest Gump</option>
+        <option class="options" value="Bender">Bender</option>
+        <option class="options" value="Rick Sanchez">Rick Sanchez</option>
+        <option class="options" value="Neil Armstrong">Neil Armstrong</option>
+        <option class="options" value="Franklin D. Roosevelt">Franklin D. Roosevelt</option>
+
+    </select>
+    <button type="button" onclick="select_author()">choose</button>
+
+    <div id="filter_by_author">
+    </div>
+
+    <div id="next_prev_btns">
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
