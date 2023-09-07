@@ -104,6 +104,25 @@ age:"30"
 
 //synchronous and Asynchronous
 
+let a = 1
+let b = 2
+setTimeout(function(){
+  console.log('Async')
+},100)
+
+setTimeout(function(){
+  console.log('Timeput:'+ a )
+
+},100)
+a = 10
+
+fetch('/').then(function(){
+  console.log('Fetch')
+})
+
+console.log('synchronous')
+console.log(a)
+console.log(b)
 
 // function a (){
 //     setTimeout
