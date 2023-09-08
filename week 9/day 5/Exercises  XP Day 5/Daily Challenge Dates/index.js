@@ -1,77 +1,24 @@
-
-// function getDateFmString(){
-// Date getDateFmString(String dateString)
-// {
-
-//  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//  Date convertedCurrentDate = sdf.parse(dateString);
-//  return convertedCurrentDate ;
-// }
-// }
-
- 
-
-//  Create a function that takes a date object and return string in the following format: YYYYMMDDHHmmSS.
+// Instructions :
+// Create a function that takes a date object and return string in the following format: YYYYMMDDHHmmSS.
 
 // The format should contain a 4 digit year, 2 digit month, 2 digit day, 2 digit hour(00-23), 2 digit minute and 2 digit second.
 // If any of the value has only single digit, you must use zero prefix, so that the result string length is always the same.
 
-// // Examples
- 
- 
-// formatDate(new Date(2020, 6, 4, 8, 0, 0)) 
+// Examples
 
-// formatDate(new Date(2019, 11, 31, 23, 59, 59))
+// formatDate(new Date(2020, 6, 4, 8, 0, 0)) ➞ "20200704080000"
 
-// formatDate(new Date(2020, 6, 4)) 
+// formatDate(new Date(2019, 11, 31, 23, 59, 59)) ➞ "20191231235959"
 
-
-// function formatDate(date = new Date()) {
-//     const year = date.toLocaleString('default', {year: 'numeric'});
-//     const month = date.toLocaleString('default', {month: '2-digit'});
-//     const day = date.toLocaleString('default', {day: '2-digit'});
-    
-
-//     return [year, month, day,].join('-');
-//   }
-  
-  
-//   console.log(formatDate(new Date()));
-  
-  
-//   console.log(formatDate(new Date(2025, 4, 9)));
-  
+// formatDate(new Date(2020, 6, 4)) ➞ "20200704000000"
 
 
+// Notes
+// Assume Date year input will always be greater than 1970.
 
+// Try not to rely on the default Date.toString() output in your implementation.
 
-//   function padTo2Digits(num) {
-//     return num.toString().padStart(2, '0');
-//   }
-  
-//   function formatDate(date) {
-//     return (
-//       [
-//         date.getFullYear(),
-//         padTo2Digits(date.getMonth() + 1),
-//         padTo2Digits(date.getDate()),
-//       ].join('-') +
-//       ' ' +
-//       [
-//         padTo2Digits(date.getHours()),
-//         padTo2Digits(date.getMinutes()),
-//         padTo2Digits(date.getSeconds()),
-//       ].join(':')
-//     );
-//   }
-  
-
-//   console.log(formatDate(new Date()));
-  
-
-//   console.log(formatDate(new Date('May 04, 2025 05:24:07')))
-
-
+// Be aware that the Date's month field is zero based (0 is January and 11 is December).
 
 
 
@@ -90,3 +37,28 @@
   const date = new Date();
   const formattedDate = formatDate(date);
   console.log(formattedDate);
+
+
+
+  function formatDate(date = new Date()) {
+  const year = date.toLocaleString('default', {year: 'numeric'});
+  const month = date.toLocaleString('default', {
+    month: '2-digit',
+  });
+  const day = date.toLocaleString('default', {day: '2-digit'});
+
+  return [year, month, day].join('-');
+}
+
+// 2023-07-26 (YYYY-MM-DD)
+console.log(formatDate(new Date()));
+
+//2025-05-09 (YYYY-MM-DD)
+console.log(formatDate(new Date(2025, 4, 9)));
+
+
+
+
+
+
+
