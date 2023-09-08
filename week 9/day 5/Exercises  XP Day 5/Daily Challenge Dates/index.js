@@ -16,71 +16,77 @@
 // The format should contain a 4 digit year, 2 digit month, 2 digit day, 2 digit hour(00-23), 2 digit minute and 2 digit second.
 // If any of the value has only single digit, you must use zero prefix, so that the result string length is always the same.
 
-// Examples
+// // Examples
  
  
-formatDate(new Date(2020, 6, 4, 8, 0, 0)) 
+// formatDate(new Date(2020, 6, 4, 8, 0, 0)) 
 
-formatDate(new Date(2019, 11, 31, 23, 59, 59))
+// formatDate(new Date(2019, 11, 31, 23, 59, 59))
 
-formatDate(new Date(2020, 6, 4)) 
+// formatDate(new Date(2020, 6, 4)) 
 
 
-function formatDate(date = new Date()) {
-    const year = date.toLocaleString('default', {year: 'numeric'});
-    const month = date.toLocaleString('default', {month: '2-digit'});
-    const day = date.toLocaleString('default', {day: '2-digit'});
+// function formatDate(date = new Date()) {
+//     const year = date.toLocaleString('default', {year: 'numeric'});
+//     const month = date.toLocaleString('default', {month: '2-digit'});
+//     const day = date.toLocaleString('default', {day: '2-digit'});
     
 
-    return [year, month, day,].join('-');
-  }
+//     return [year, month, day,].join('-');
+//   }
   
   
-  console.log(formatDate(new Date()));
+//   console.log(formatDate(new Date()));
   
   
-  console.log(formatDate(new Date(2025, 4, 9)));
+//   console.log(formatDate(new Date(2025, 4, 9)));
   
 
 
 
 
-  function padTo2Digits(num) {
-    return num.toString().padStart(2, '0');
-  }
+//   function padTo2Digits(num) {
+//     return num.toString().padStart(2, '0');
+//   }
   
+//   function formatDate(date) {
+//     return (
+//       [
+//         date.getFullYear(),
+//         padTo2Digits(date.getMonth() + 1),
+//         padTo2Digits(date.getDate()),
+//       ].join('-') +
+//       ' ' +
+//       [
+//         padTo2Digits(date.getHours()),
+//         padTo2Digits(date.getMinutes()),
+//         padTo2Digits(date.getSeconds()),
+//       ].join(':')
+//     );
+//   }
+  
+
+//   console.log(formatDate(new Date()));
+  
+
+//   console.log(formatDate(new Date('May 04, 2025 05:24:07')))
+
+
+
+
+
+
   function formatDate(date) {
-    return (
-      [
-        date.getFullYear(),
-        padTo2Digits(date.getMonth() + 1),
-        padTo2Digits(date.getDate()),
-      ].join('-') +
-      ' ' +
-      [
-        padTo2Digits(date.getHours()),
-        padTo2Digits(date.getMinutes()),
-        padTo2Digits(date.getSeconds()),
-      ].join(':')
-    );
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minute = String(date.getMinutes()).padStart(2, "0");
+    const second = String(date.getSeconds()).padStart(2, "0");
+  
+    return `${year}${month}${day}${hour}${minute}${second}`;
   }
   
-
-  console.log(formatDate(new Date()));
-  
-
-  console.log(formatDate(new Date('May 04, 2025 05:24:07')));
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const date = new Date();
+  const formattedDate = formatDate(date);
+  console.log(formattedDate);
