@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather app </title>
+</head>
+<body>
+    <nav id="navbar">
+        <form>
+            <input type="text" id="city" placeholder="Enter a city" value="">
+            <input type="submit" value="Search!" onclick="getWeather(event)">
+        </form>
+    </nav>
+    <div id="weather">
+    </div>
+    
+    <label class="switch">
+        <input type="checkbox" id="scale_check" onclick="temChange(event)">
+        <span class="slider round"  ></span>
+            
+    </label>
+    <script src="index.js"></script>
+</body>
+</html>
+
