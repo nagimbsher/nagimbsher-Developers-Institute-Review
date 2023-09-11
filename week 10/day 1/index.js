@@ -115,9 +115,9 @@ console.log(error);
 //     resolve('Resolve promise3')
 //   });
 
-//promise all (arr)
-// promise allssttled a(arr)
-//promise race(arr)
+//promise all ()
+// Promise.allSettled()
+//promise race()
 //Promise all
 
 // const promise1 = Promise.resolve(3);
