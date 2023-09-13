@@ -122,25 +122,25 @@ async function x (){
 
 
 
-// fetch ('https://jsonplaceholder.typicode.com/users')
-// .then(res =>res.json())
-// .then(data=>{
-//     console.log(data);
-// })
-// .catch(e=>{
-//     console.log(e);
-// })
+fetch ('https://jsonplaceholder.typicode.com/users')
+.then(res =>res.json())
+.then(data=>{
+    console.log(data);
+})
+.catch(e=>{
+    console.log(e);
+})
 
-// async function getdate(){
-//     try{
-//         const res = await fetch ('https://jsonplaceholder.typicode.com/users');
-//         const date = await res.json()
-//         console.log('data=>',date);
-//     }catch(error){
-//         console.log('error=>',error);
-//     }
-// }
-// getdate()
+async function getdate(){
+    try{
+        const res = await fetch ('https://jsonplaceholder.typicode.com/users');
+        const date = await res.json()
+        console.log('data=>',date);
+    }catch(error){
+        console.log('error=>',error);
+    }
+}
+getdate()
 
 
 
