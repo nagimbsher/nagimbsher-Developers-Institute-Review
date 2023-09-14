@@ -76,7 +76,7 @@ async function fetchSunrise() {
   let lon_2 = document.getElementsByClassName("lon")[1].value;
   for (elem of [lat_1,lat_2,lon_1,lon_2])  {
       if (isNaN(elem) || elem == ""){
-          alert(`you have to input numbers only`);
+      
           return
       }
   };
