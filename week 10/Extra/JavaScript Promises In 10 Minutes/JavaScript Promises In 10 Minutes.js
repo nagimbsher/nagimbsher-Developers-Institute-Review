@@ -14,6 +14,3 @@ p.then ((message) => {
     console.log('This is in the cath' + message)
 })
 
-const compareTen = (num) =>{
-
-}
