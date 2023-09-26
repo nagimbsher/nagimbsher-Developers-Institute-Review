@@ -18,8 +18,10 @@
 
 
 
-const axios  = require("axios");
-axios.get("https://jsonplaceholder.typicode.com/users")
+ const axios  = require("axios");
+                                                //users
+                                                //albums
+axios.get("https://jsonplaceholder.typicode.com/albums")
 .then(resp => 
         {if(resp.status === 200){
             console.log(resp)};
@@ -28,13 +30,18 @@ axios.get("https://jsonplaceholder.typicode.com/users")
 
 
 
-// const getData = async(ulr) => {
+
+// const axios  = require("axios");
+// const getData = async(url) => {
 //     try{
 //         const res = await axios.get(url);
 //         return res.data;
-//     }catch(error){
-//         console,log(error);
+//     }catch (error){
+//         console.log(error);
 //     }
 // };
-// getData("https://jsonplaceholder.typicode.com/users")
+// getData("https://jsonplaceholder.typicode.com/users");
 
+// module.exports = {
+//     getData,
+// }

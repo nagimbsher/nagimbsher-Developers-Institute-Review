@@ -1,7 +1,7 @@
-const greeting = require("./greeting.js");
-const b = require("./greeting.js");
+const  { g,h}= require("./greeting.js");
+//const b = require("./greeting.js");
 //b ("nagim")
 //console.log("b=>",b);
 
-greeting("Nagim");
-hello("John");
+g("Nagim");
+h("John");
