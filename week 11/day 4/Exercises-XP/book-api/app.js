@@ -27,12 +27,12 @@ Implement the “Create” route at POST /api/books. Use the express.json() midd
 
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 5000
 
 // app.get('/', (req,res) =>{
 //   res.send("book root")
 // })
-app.get('/', (req, res) => {
+app.get('/api/books', (req, res) => {
   const book = {
     title: 'How to win friends and influence people',
     authors: ['Dale Carnegie'],
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
  
 
 
-app.get('/', (req, res) => {
+app.get('/api/books/:bookId', (req, res) => {
   const books = {
     title: 'How to win friends and influence people',
     authors: ['Dale Carnegie'],
@@ -55,6 +55,10 @@ app.get('/', (req, res) => {
  
   res.send(books)
 })
+
+app.get('/books', (req, res) => {
+  res.json(books);
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
