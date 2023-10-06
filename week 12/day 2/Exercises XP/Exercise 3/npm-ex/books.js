@@ -1,5 +1,5 @@
 
-  const products = [{
+  const books = [{
     title: 'How to win friends and influence people',
     authors: ['Dale Carnegie'],
     publisher: 'Pocket Books',
@@ -63,6 +63,6 @@
 
 
   module.exports = {
-    products,
+    books,
   };
   

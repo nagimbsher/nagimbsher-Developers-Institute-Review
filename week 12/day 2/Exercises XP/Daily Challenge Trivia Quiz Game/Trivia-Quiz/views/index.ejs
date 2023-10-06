@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Find a quiz</title>
+  <link href="./styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Trivia</h1>
-        <form action="trivia" method="post">
-            <input type="number" name="amount" value="9" min="1" max="20"/>
-            <br />
-            <label for="category"> Category</label>
-            <select name="category">
-                <option value="21">Mythology</option>
-                <option value="122"> Sport</option>
-            </select>
-            <br />
-            <label for="difficulty">difficulty</label>
-            <select name="difficulty">
-                
-                <option value="easy">Easy</option>
-                <option value="medium"> medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <br />
-            <button type="submit">Start Quiz</button>
-        </form>
+  <div class="container">
+    <h1>Quizzes</h1>
+    <p>Find all available quizzes here</h1>
+    <div class="quizzes">
+      <% quizzes.forEach(quiz => { %>
+        <a href="./quiz?name=<%- quiz.slug %>"><button><%= quiz.title %></button></a>
+      <% }) %>
     </div>
+  </div>
 </body>
 </html>
