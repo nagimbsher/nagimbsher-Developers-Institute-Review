@@ -1,119 +1,84 @@
-const express = require("express");
-// const bp = require("body-parser");
-const { users } = require("./server.js");
+//REST API Node.js
+express = require('express'); // requre the express framework
+ app = express();
+ fs = require('fs'); //require file system object
 
-const app = express();
 
-// parse application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: false }));
-
-// parse application/json
-app.use(express.json());
-
-app.listen(3001, () => {
-  console.log("run on port 3001");
-});
-
-// CRUD - READ - GET - get all users
-app.get("/api/users", (req, res) => {
-  res.json(users);
-});
-
-//CRUD -READ -GET - search for user name - using query
-app.get("/api/users/search", (req, res) => {
-  const { name } = req.query;
-  const filtered_users = users.filter((item) =>
-    item.name.toLowerCase().includes(name.toLowerCase())
-  );
-  if (filtered_users.length === 0)
-    return res.status(404).json({ msg: "users not found" });
-  res.json(filtered_users);
-});
-
-//CRUD -READ  -GET - get one user - using params
-app.get("/api/users/:id", (req, res) => {
-  console.log("params=>", req.params);
-  const { id } = req.params;
-  const user = users.find((item) => item.id == id);
-  if (!user) return res.status(404).json({ msg: "user not found" });
-  res.json(user);
-});
-
-//http://example.com/api/users- create a new user - POST
-//CRUD - CREATE -POST - create new user - using body
-app.post("/api/users", (req, res) => {
-  console.log("body=>", req.body);
-  const { name, email } = req.body;
-  const newUser = {
-    id: users.length + 1,
-    name,
-    email,
-  };
-  users.push(newUser);
-  res.json(users);
-});
-
-//CRUD - UPDATE  -PUT - update a user - using params & body
-app.put("/api/users/:id", (req, res) => {
-  const { id } = req.params;
-  const { name, email } = req.body;
-  const index = users.findIndex((item) => item.id == id);
-
-  if (index === -1) return res.status(404).json({ msg: "user not found" });
-
-  users[index].name = name;
-  users[index].email = email;
-
-  res.json(users);
-});
-
-//http://example.com/api/users - delete - DELETE
-app.delete("/api/users/:id", (req, res) => {
-  const { id } = req.params;
-  const index = users.findIndex((item) => item.id == id);
-  if (index === -1) return res.status(404).json({ msg: "user not found" });
-  users.splice(index, 1);
-  res.json(users);
-});
+//Step 1: Create a new user variable
+ user = {
+    "user5": {
+        "id":5,
+        "firstname":"Liudmyla",
+        "lastname":"Nagorna",
+        "email":"mila@gmail.com"
+      },
+} 
 
 
 
+//The addUser endpoint
+app.post('/addUser', function(req, res){
+    //Step 2: read existing users
+    fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
+        data = JSON.parse(data);
+        //Step 3: append user variable to list
+        data["user5"] = user["user5"];
+        console.log(data);
+        res.end(JSON.stringify(data));
+    });
+})
 
 
-// //Post Method
-// router.post('/post', (req, res) => {
-//   res.send('Post API')
-// })
+// Endpoint to Get a list of users
+app.get('/getUsers', function(req, res){
+    fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
+        console.log(data);
+        res.end(data); // you can also use res.send()
+    });
+})
 
-// //Get all Method
-// router.get('/getAll', (req, res) => {
-//   res.send('Get All API')
-// })
-
-// //Get by ID Method
-// router.get('/getOne/:id', (req, res) => {
-//   res.send('Get by ID API')
-// })
-
-// //Update by ID Method
-// router.patch('/update/:id', (req, res) => {
-//   res.send('Update by ID API')
-// })
-
-// //Delete by ID Method
-// router.delete('/delete/:id', (req, res) => {
-//   res.send('Delete by ID API')
-// })
+  
+//Endpoint to get a single user by id
+app.get('/:id', function (req, res) {
+    // First retrieve existing user list
+    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+        users = JSON.parse( data );
+        user = users["user" + req.params.id] 
+       console.log( user );
+       res.end( JSON.stringify(user));
+    });
+ })
 
 
-// const express = require('express')
-// const app = express()
-// const port = 3000
+  //Code to delete a user by id
+   id = 3;
+  app.delete('/deleteUser', function (req, res) {
+     // First retrieve existing users
+     fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+        data = JSON.parse( data );
+        delete data["user" + 3];
+         
+        console.log( data );
+        res.end( JSON.stringify(data));
+     });
+  })
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+// Create a server to listen at port 8080
+ server = app.listen(3000, function(){
+    host = server.address().address
+    port = server.address().port
+    console.log("REST API app listening at http", host, port)
+})
+
+
+
+// function saveUsers() {
+//   try{
+//     fs.writeFlesSync (usersFilePath, JSON.stringify(users, null), "utf-8");
+
+//   }catch(error){
+//     console.error("Error writing tasks file:",error);
+//   }
+// }
+//saveUsers()

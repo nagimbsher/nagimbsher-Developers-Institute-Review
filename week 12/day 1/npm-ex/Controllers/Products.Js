@@ -1,4 +1,4 @@
-const products = require('../data.js')
+const products = require('../Routes/data.js')
 
 const getProducts = (req, res) => {
     res.json(products)
