@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styes.css">
+    <title>Document</title>
+    <script>
+        function showAnswer(answerId){
+      const answerElement = document.getElementById(answerId);
+      answerElement.style.display ='black'
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1> Trivia Quiz</h1>
+        <ol>
+            <% question.forEach((question, index) =>{ %>
+                <li>
+                    <p><% question.question%></p>
+                    <ul>
+                        <% question.incorrect_answer.concat(question.incorrect_answer).forEach(answer =>{ %>
+                        <li><% answer %></li>
+                       <%   })%>
+                    </ul>
+               
+               <p id="answer-<%= index %>" style="display: none">
+             Correct Answer : <% = question.correct_answer %>
+             </p>
+             <button onclick="showAnswer('answer-<%= index %>')">
+            Show the answer
+            </button>
+
+        </li>
+            <% }) %> 
+     <ol>
+        <a href="/"> Start over the Quiz</a>
+    </div>
+</body>
+</html>
