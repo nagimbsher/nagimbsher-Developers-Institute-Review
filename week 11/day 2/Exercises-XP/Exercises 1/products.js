@@ -16,38 +16,11 @@
 
 // Run shop.js and verify that the correct product details are displayed.
 
-
 const products = [
-    {
-      id: 1,
-      name: "Brown Shirt",
-      description: "Brown T-Shirt for Women",
-      price: 16.99,
-      gender: "women",
-      type: "shirt",
-      category: "clothes"
-    },
-    {
-      id: 2,
-      name: "Light Brown Shirt",
-      description: "Light Brown Shirt for Women",
-      price: 4.99,
-      gender: "women",
-      type: "shirt",
-      category: "clothes"
-    },
-    
-  ];
-  
-  //console.log(f.constructor);
+  { name: "Product 1", price: 10, category: "Category A" },
+  { name: "Product 2", price: 20, category: "Category B" },
+  { name: "Product 3", price: 30, category: "Category A" },
+  { name: "Product 4", price: 40, category: "Category C" },
+];
 
-  products.map((value) => {
-	for(let property in value) {
-  	console.log(`${property}: ${value[property]}`);
-  }
-});
-  
-  
 module.exports = products;
-
-

@@ -1,0 +1,34 @@
+
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .actors-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .actor-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .actor-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .actor-card h2 {
+    margin-top: 10px;
+  }
+  
