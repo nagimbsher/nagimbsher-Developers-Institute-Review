@@ -1,17 +1,103 @@
-import Car from "./components/Car";
-import Actor from "./components/Actor";
-const App = () => {
-  const brand = "Ford";
 
+import React from 'react';
+import Counter from './components/Counter';
+
+function App() {
   return (
-    <div className="box">
-      <h1>In the App.js</h1>
-      <Car />
+    <div className="App">
+      <Counter />
     </div>
   );
-};
+}
 
 export default App;
+
+
+// import React, { Component } from 'react';
+
+// class Actor extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       firstName: '',
+//       lastName: '',
+//       image: '',
+//     };
+//   }
+
+//   handleInputChange = (event) => {
+//     const { name, value } = event.target;
+//     this.setState({
+//       [name]: value,
+//     });
+//   }
+
+//   handleSubmit = (event) => {
+//     event.preventDefault();
+//     // You can access the updated state here and perform any further actions.
+//     console.log('Submitted Data:', this.state);
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Actor Form</h1>
+//         <form onSubmit={this.handleSubmit}>
+//           <div>
+//             <label htmlFor="firstName">First Name:</label>
+//             <input
+//               type="text"
+//               id="firstName"
+//               name="firstName"
+//               value={this.state.firstName}
+//               onChange={this.handleInputChange}
+//             />
+//           </div>
+//           <div>
+//             <label htmlFor="lastName">Last Name:</label>
+//             <input
+//               type="text"
+//               id="lastName"
+//               name="lastName"
+//               value={this.state.lastName}
+//               onChange={this.handleInputChange}
+//             />
+//           </div>
+//           <div>
+//             <label htmlFor="image">Image URL:</label>
+//             <input
+//               type="text"
+//               id="image"
+//               name="image"
+//               value={this.state.image}
+//               onChange={this.handleInputChange}
+//             />
+//           </div>
+//           <button type="submit">Submit</button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Actor;
+
+
+
+// import Car from "./components/Car";
+// import Actor from "./components/Actor";
+// const App = () => {
+//   const brand = "Ford";
+
+//   return (
+//     <div className="box">
+//       <h1>In the App.js</h1>
+//       <Car />
+//     </div>
+//   );
+// };
+
+// export default App;
 
 
 

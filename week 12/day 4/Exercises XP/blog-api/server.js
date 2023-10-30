@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 // Implement routes for CRUD operations
-const postsRouter = require('./server/routes/posts');
+const postsRouter = require('./routes/routes');
 app.use('/posts', postsRouter);
 
 // Implement error handling for invalid routes

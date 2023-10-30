@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Implement routes for CRUD operations
 const {
   getAllPosts,
@@ -8,7 +9,7 @@ const {
   createPost,
   updatePost,
   deletePost,
-} = require('../controllers/posts');
+} = require('./controllers/posts');
 
 router.get('/', getAllPosts);
 router.get('/:id', getPostById);
