@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Hello = (props) => {
-    const [username, setUsername] = useState("aaa");
+    const [username, setUsername] = useState("");
     const [Password, setPassword] = useState("aaa");
     const [users, setUsers] = useState([]);
  console.log(props);
