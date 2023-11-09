@@ -1,32 +1,32 @@
-import Sunrise from './Sunrise';
+// import Sunrise from './Sunrise';
 
-const App = () => {
+// const App = () => {
 
-  return (
-    <div className="box">
-      <h1>In the App.js</h1>
-      <Sunrise />
-    </div>
-  )
-}
-
-export default App;
-
-
-
-
-// import React from 'react';
-// import Counter from './components/Counter';
-
-// function App() {
 //   return (
-//     <div className="App">
-//       <Counter />
+//     <div className="box">
+//       <h1>In the App.js</h1>
+//       <Sunrise />
 //     </div>
-//   );
+//   )
 // }
 
 // export default App;
+
+
+
+
+import React from 'react';
+import Counter from './components/Counter';
+
+function App() {
+  return (
+    <div className="App">
+      <Counter />
+    </div>
+  );
+}
+
+export default App;
 
 
 // import React, { Component } from 'react';
