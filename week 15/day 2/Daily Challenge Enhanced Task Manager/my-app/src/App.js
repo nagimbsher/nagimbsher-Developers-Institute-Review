@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import EditTask from './EditTask';
+import FilterTasks from './FilterTasks';
+import { TaskProvider } from './TaskContext';
 
 function App() {
+  const task = { id: 1, text: 'Example Task' }; 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskProvider>
+      <div>
+        <EditTask task={task} />
+        <FilterTasks />
+      </div>
+    </TaskProvider>
   );
 }
 
 export default App;
+
+
+
+
