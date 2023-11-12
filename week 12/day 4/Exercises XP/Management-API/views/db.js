@@ -1,3 +1,26 @@
+// const knex = require('knex');
+
+// //CONNECTION WITH PG
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//       host : "arjuna.db.elephantsql.com",
+//       port : '5432',
+//       user:"uxmohmcw",
+//       password : 'pYIaSAvA2JFfhv2UkeKF2I4aWdfP51-1',
+//       database : 'uxmohmcw',
+//     },
+//   });
+//   module.exports = db;
+
+
+
+
+
+
+
+
+
 // db.js 
 const mongoose = require("mongoose"); 
 

@@ -1,9 +1,10 @@
-// routes/users.js
+
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+//const knex = require("knex");
 
-const db = require('../models'); // You will need to configure your database connection here
+const db = require('./views/models'); // You will need to configure your database connection here
 
 // POST /register: Allow users to register by providing a username and password.
 router.post('/register', async (req, res) => {
